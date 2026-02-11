@@ -98,34 +98,26 @@ echo "All arguments: $@"
 ```bash
 #!/bin/bash
 
-# Install karne wale packages ki list
 packages="nginx curl wget"
 
-# Har package ke liye loop chalega
 for pkg in $packages
 do
-    # Batata hai kaunsa package check ho raha hai
-    echo "Package check ho raha hai: $pkg"
+    echo "Checking package: $pkg"
 
-    # Check karta hai ki package pehle se install hai ya nahi
     if dpkg -s $pkg >/dev/null 2>&1
     then
-        # Agar package pehle se install hai
-        echo "$pkg pehle se install hai. Skip kiya ja raha hai..."
+        echo "$pkg is already installed. Skipping..."
     else
-        # Agar package install nahi hai
-        echo "$pkg install nahi hai. Ab install kiya ja raha hai..."
-        
-        # Package install karne ka command
+        echo "$pkg is not installed. Installing now..."
+
         apt install -y $pkg
 
-        # Install complete hone ka message
-        echo "$pkg ka installation complete ho gaya."
+        echo "$pkg installation completed."
     fi
 
-    # Output ko clean dikhane ke liye line
     echo "-----------------------------"
 done
+
 
 ```
 
@@ -140,25 +132,18 @@ done
 ```bash
 #!/bin/bash
 
-# set -e ka matlab:
-# jaise hi koi command fail hogi, script turant band ho jayegi
 set -e
 
-echo "Script start ho rahi hai..."
+echo "Script is starting..."
 
-# Step 1: Directory banane ki koshish
-# Agar directory pehle se hai, to error message print hoga
-mkdir /tmp/devops-test || echo "Directory pehle se exist karti hai"
+mkdir /tmp/devops-test || echo "Directory already exists"
 
-# Step 2: Directory ke andar jane ki koshish
-# Agar directory nahi mili, to error message print hoga
-cd /tmp/devops-test || echo "Directory ke andar jane me error aaya"
+cd /tmp/devops-test || echo "Error while entering the directory"
 
-# Step 3: File create karna
-# touch command file banata hai
-touch demo.txt || echo "File create nahi ho payi"
+touch demo.txt || echo "File could not be created"
 
-echo "File aur directory successfully create ho gaye 🎉"
+echo "File and directory created successfully "
+
 
 ```
 
@@ -176,42 +161,37 @@ echo "File aur directory successfully create ho gaye 🎉"
 ```bash
 #!/bin/bash
 
-# Step 1: Check karo ki script root user se run ho rahi hai ya nahi
-# Agar root nahi hai to message dikha ke script band ho jayegi
 if [ "$EUID" -ne 0 ]
 then
-    echo " Ye script root user se run karni hogi"
-    echo "Please 'sudo -i' ya 'sudo ./install_packages.sh' use karo"
+    echo "This script must be run as root user"
+    echo "Please use 'sudo -i' or 'sudo ./install_packages.sh'"
     exit 1
 fi
 
-# Step 2: Install karne wale packages ki list
 packages="nginx curl wget"
 
-echo "✅ Script root user se run ho rahi hai"
+echo "✅ Script is running as root user"
 echo "-----------------------------"
 
-# Step 3: Har package ke liye loop
 for pkg in $packages
 do
-    echo "Package check ho raha hai: $pkg"
+    echo "Checking package: $pkg"
 
-    # Step 4: Check karo package pehle se install hai ya nahi
     if dpkg -s $pkg &> /dev/null
     then
-        echo "$pkg pehle se install hai. Skip kiya ja raha hai..."
+        echo "$pkg is already installed. Skipping..."
     else
-        echo "$pkg install nahi hai. Ab install ho raha hai..."
+        echo "$pkg is not installed. Installing now..."
 
-        # Step 5: Package install karo
         apt install -y $pkg
 
-        echo "$pkg ka installation complete ho gaya."
+        echo "$pkg installation completed."
     fi
 
     echo "-----------------------------"
 done
 
-echo " Sab packages ka process complete ho gaya"
+echo "All packages process completed"
+
 
 ```
