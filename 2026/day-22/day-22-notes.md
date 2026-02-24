@@ -18,4 +18,4 @@ Staging area holds selected changes before commit.
 Repository stores permanently saved project history.
 
 
-![alt text](image.png)
+![](image.png)
