@@ -219,6 +219,8 @@ Containers are lightweight, fast, and easier to manage compared to traditional v
 
 
 
+
+
 # Task 2: Install Docker
 
 In this task, we install Docker, verify the installation, and run the **hello-world container** to check if Docker is working correctly.
@@ -344,6 +346,8 @@ Running the **hello-world container** confirms that:
 - Docker daemon is running
 - Docker can pull images from Docker Hub
 - Docker can create and run containerss
+
+
 
 
 
@@ -514,6 +518,7 @@ In this task we learned how to:
 - Stop and remove containers
 
 These are the basic commands used to manage Docker containers in real DevOps workflows.
+
 
 
 # Task 4: Explore Docker Containers
