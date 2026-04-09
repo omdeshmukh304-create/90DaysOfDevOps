@@ -175,7 +175,7 @@ Watch how Kubernetes creates or terminates pods to match the desired count.
 You can also scale by editing the manifest — change `replicas: 4` in your YAML file and run `kubectl apply -f nginx-deployment.yaml` again.
 
 **Verify:** When you scaled down from 5 to 2, what happened to the extra pods?
-
+1
 ---
 
 ### Task 6: Rolling Update
