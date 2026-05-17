@@ -61,6 +61,7 @@ spec:
 ```
 
 ```bash
+kubectl config use-context kind-om-deshmukh-cluster
 kubectl apply -f app-deployment.yaml
 kubectl get pods -o wide
 ```

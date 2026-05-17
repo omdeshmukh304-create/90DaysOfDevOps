@@ -13,7 +13,7 @@ Ten days of Kubernetes — clusters, Pods, Deployments, Services, ConfigMaps, Se
 
 ---
 
-## Challenge Tasks
+#,# Challenge Tasks
 
 ### Task 1: Create the Namespace (Day 52)
 1. Create a `capstone` namespace
