@@ -1,7 +1,8 @@
-instance_type = "t2.medium"
-environment   = "prod"
-
-vpc_cidr    = "10.2.0.0/16"
-subnet_cidr = "10.2.1.0/24"
-
 ami_id = "ami-0f58b397bc5c1f2e8"
+
+vpc_cidr    = "10.1.0.0/16"
+subnet_cidr = "10.1.1.0/24"
+
+instance_type = "t2.small"
+
+ingress_ports = [22, 80, 443]

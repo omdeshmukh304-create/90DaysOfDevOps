@@ -1,3 +1,15 @@
-variable "vpc_id" {}
+variable "vpc_id" {
+  type = string
+}
 
-variable "tags" {}
+variable "ingress_ports" {
+  type = list(number)
+}
+
+variable "environment" {
+  type = string
+}
+
+variable "project_name" {
+  type = string
+}

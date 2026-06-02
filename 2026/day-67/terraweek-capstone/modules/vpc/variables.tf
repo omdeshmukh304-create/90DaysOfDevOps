@@ -1,5 +1,15 @@
-variable "vpc_cidr" {}
+variable "cidr" {
+  type = string
+}
 
-variable "subnet_cidr" {}
+variable "public_subnet_cidr" {
+  type = string
+}
 
-variable "tags" {}
+variable "environment" {
+  type = string
+}
+
+variable "project_name" {
+  type = string
+}

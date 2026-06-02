@@ -1,13 +1,30 @@
+variable "project_name" {
+  type    = string
+  default = "terraweek"
+}
+
 variable "aws_region" {
+  type    = string
   default = "ap-south-1"
 }
 
-variable "instance_type" {}
+variable "ami_id" {
+  type = string
+}
 
-variable "environment" {}
+variable "vpc_cidr" {
+  type = string
+}
 
-variable "vpc_cidr" {}
+variable "subnet_cidr" {
+  type = string
+}
 
-variable "subnet_cidr" {}
+variable "instance_type" {
+  type = string
+}
 
-variable "ami_id" {}
+variable "ingress_ports" {
+  type    = list(number)
+  default = [22, 80]
+}
