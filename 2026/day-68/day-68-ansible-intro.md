@@ -189,3 +189,4 @@ ansible web -i inventory.ini -m apt -a "name=git state=present" --become
 Installing packages, managing services, creating system users, modifying system configuration files, and other administrative tasks require root privileges. In such cases, `--become` is needed.
 
 Without `--become`, Ansible runs commands as the remote login user (in this lab, the `ubuntu` user).
+
