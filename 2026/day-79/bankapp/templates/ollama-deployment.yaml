@@ -1,0 +1,35 @@
+{{- if .Values.ollama.enabled }}
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "bankapp.fullname" . }}-ollama
+  namespace: {{ .Release.Namespace }}
+spec:
+  selector:
+    matchLabels:
+      app: {{ include "bankapp.fullname" . }}-ollama
+  template:
+    metadata:
+      labels:
+        app: {{ include "bankapp.fullname" . }}-ollama
+    spec:
+      containers:
+        - name: ollama
+          image: "{{ .Values.ollama.image.repository }}:{{ .Values.ollama.image.tag }}"
+          ports:
+            - containerPort: 11434
+
+          {{- with .Values.ollama.resources }}
+          resources:
+            {{- toYaml . | nindent 12 }}
+          {{- end }}
+
+          volumeMounts:
+            - name: ollama-storage
+              mountPath: /root/.ollama
+
+      volumes:
+        - name: ollama-storage
+          persistentVolumeClaim:
+            claimName: {{ include "bankapp.fullname" . }}-ollama-pvc
+{{- end }}

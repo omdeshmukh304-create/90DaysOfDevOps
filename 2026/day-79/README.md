@@ -627,7 +627,7 @@ helm uninstall my-bankapp -n bankapp
 ---
 
 ## Documentation
-Create `day-79-custom-charts.md` with:
+Create `` with:
 - Side-by-side comparison: raw `k8s/` manifests vs Helm templates (pick 2-3 files)
 - Your complete `values.yaml` with explanations
 - Go template syntax cheat sheet: `{{ .Values }}`, `if`, `range`, `with`, `include`, `toYaml`, `nindent`, `b64enc`
