@@ -136,7 +136,7 @@ PromQL (Prometheus Query Language) is how you ask questions about your metrics. 
 ```promql
 up
 ```
-This returns 1 (up) or 0 (down) for each scrape target.
+This returns 1 (up) or 0 (down)0 for each scrape target.
 
 2. **Range vector** -- values over a time window:
 ```promql

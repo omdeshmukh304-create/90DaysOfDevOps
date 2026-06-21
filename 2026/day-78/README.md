@@ -199,7 +199,7 @@ You should see revision 1 (original) and revision 2 (metrics enabled).
 
 **Rollback to the previous version:**
 ```bash
-helm rollback bankapp-mysql 1
+helm rollback bankapp-mysql 
 ```
 
 Check history again:

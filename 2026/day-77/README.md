@@ -16,7 +16,9 @@ You will clone the observability-for-devops reference repo, spin up the complete
 - A markdown file: `day-77-observability-project.md`
 
 ---
+help me to understan and to write code
 
+1st write full code
 ## Challenge Tasks
 
 ### Task 1: Clone and Launch the Reference Stack
