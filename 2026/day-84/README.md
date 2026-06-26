@@ -332,7 +332,7 @@ ArgoCD will overwrite your change with the value from Git.
 
 ## Documentation
 Create `day-84-gitops-argocd.md` with:
-- GitOps principles in your own words
+- GitOps principles in /your own words
 - GitOps vs traditional CI/CD comparison table
 - The AI-BankApp's GitOps flow diagram
 - Screenshot of the ArgoCD UI showing the bankapp Application resource tree
