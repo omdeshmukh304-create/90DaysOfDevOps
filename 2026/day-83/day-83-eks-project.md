@@ -161,14 +161,13 @@ rate(http_server_requests_seconds_bucket{namespace="bankapp"}[5m])
 # Screenshots
 
 Add the following screenshots:
+![alt text](<WhatsApp Image 2026-06-27 at 11.22.41 AM.jpeg>)
 
-* AI-BankApp Dashboard
-* AI Chatbot
-* `kubectl get all -n bankapp`
-* Grafana Dashboard
-* Prometheus Targets
+![alt text](<WhatsApp Image 2026-06-27 at 11.22.42 AM.jpeg>)
 
+![alt text](<WhatsApp Image 2026-06-27 at 11.22.41 AM (2).jpeg>)
 ---
+
 
 # Teardown Procedure
 
